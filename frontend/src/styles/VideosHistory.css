@@ -10,7 +10,8 @@
   list-style-type: none;
   padding: 0;
   background-color: #f0f0f0;
-  min-height: 600px;
+  height: 600px;
+  overflow-y: auto;
   border-radius: 5px;
 }
 
@@ -28,4 +29,10 @@
   color: white;
   border: none;
   cursor: pointer;
+}
+
+.history-list-video-name {
+  cursor: pointer;
+  color: rgb(46, 46, 229);
+  text-decoration: underline;
 }

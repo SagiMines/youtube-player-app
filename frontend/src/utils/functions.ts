@@ -63,6 +63,16 @@ export const handlePlay = async (
   }
 };
 
+export const handleHistoryPlay = async (
+  videoId: string,
+  searchResults: YoutubeSearchResult[],
+  setCurrentVideo: React.Dispatch<React.SetStateAction<string>>,
+  setSearchResults: React.Dispatch<React.SetStateAction<YoutubeSearchResult[]>>
+): Promise<void> => {
+  setCurrentVideo(videoId);
+  if (searchResults.length) setSearchResults([]);
+};
+
 export const handleDelete = async (
   id: string,
   setHistory: React.Dispatch<React.SetStateAction<Video[]>>

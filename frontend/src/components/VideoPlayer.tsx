@@ -1,9 +1,9 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { GlobalContext } from './UserContext';
 import { VideoPlayerData } from '../types';
 import './../styles/VideoPlayer.css';
 
-const VideoPlayer = () => {
+const VideoPlayer = React.memo(() => {
   const { currentVideo } = useContext<VideoPlayerData>(GlobalContext);
 
   return (
@@ -17,6 +17,6 @@ const VideoPlayer = () => {
       )}
     </div>
   );
-};
+});
 
 export default VideoPlayer;

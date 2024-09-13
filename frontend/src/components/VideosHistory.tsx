@@ -1,11 +1,17 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { GlobalContext } from './UserContext';
 import { VideosHistoryData } from '../types';
-import { handleDelete } from '../utils/functions';
+import { handleDelete, handleHistoryPlay } from '../utils/functions';
 import './../styles/VideosHistory.css';
 
-const VideosHistory = () => {
-  const { history, setHistory } = useContext<VideosHistoryData>(GlobalContext);
+const VideosHistory = React.memo(() => {
+  const {
+    history,
+    setHistory,
+    searchResults,
+    setSearchResults,
+    setCurrentVideo,
+  } = useContext<VideosHistoryData>(GlobalContext);
 
   return (
     <div className="history">
@@ -13,7 +19,19 @@ const VideosHistory = () => {
       <ul className="history-list">
         {history.map(video => (
           <li key={video._id} className="history-item">
-            <span>{video.title}</span>
+            <span
+              className="history-list-video-name"
+              onClick={() =>
+                handleHistoryPlay(
+                  video.videoId,
+                  searchResults,
+                  setCurrentVideo,
+                  setSearchResults
+                )
+              }
+            >
+              {video.title}
+            </span>
             <button onClick={() => handleDelete(video._id, setHistory)}>
               Delete
             </button>
@@ -22,6 +40,6 @@ const VideosHistory = () => {
       </ul>
     </div>
   );
-};
+});
 
 export default VideosHistory;
