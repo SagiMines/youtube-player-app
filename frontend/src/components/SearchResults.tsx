@@ -4,7 +4,16 @@ import { handlePlay } from '../utils/functions';
 import { SearchResultsData } from '../types';
 import './../styles/SearchResults.css';
 
+/**
+ * The SearchResults component.
+ *
+ * Renders the YouTube videos relevant to the search input text.
+ *
+ * @component
+ * @usedby ./SearchBox.tsx
+ */
 const SearchResults = React.memo(() => {
+  /** The relevant context passed from the global context */
   const { searchResults, setSearchResults, setCurrentVideo, setHistory } =
     useContext<SearchResultsData>(GlobalContext);
 
