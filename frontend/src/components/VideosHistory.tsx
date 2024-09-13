@@ -4,7 +4,17 @@ import { VideosHistoryData } from '../types';
 import { handleDelete, handleHistoryPlay } from '../utils/functions';
 import './../styles/VideosHistory.css';
 
+/**
+ * The VideosHistory component.
+ *
+ * Renders a list of the YouTube videos that were clicked at watched from
+ * the search results.
+ *
+ * @component
+ * @usedby ./App.tsx
+ */
 const VideosHistory = React.memo(() => {
+  /** The relevant context passed from the global context */
   const {
     history,
     setHistory,
