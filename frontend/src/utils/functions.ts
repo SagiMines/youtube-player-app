@@ -6,7 +6,6 @@ import { ChangeEvent } from 'react';
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 /** The "YOUTUBE_API_KEY" environment variable */
 const YOUTUBE_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
-const YOUTUBE_API_KEY2 = import.meta.env.VITE_YOUTUBE_API_KEY2;
 
 /**
  * @function fetchHistory
@@ -54,18 +53,7 @@ export const handleSearch = async (
     );
     setSearchResults(response.data.items);
   } catch (error: any) {
-    if (error.status === 403) {
-      try {
-        const response = await axios.get(
-          `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&type=video&key=${YOUTUBE_API_KEY2}`
-        );
-        setSearchResults(response.data.items);
-      } catch (error: any) {
-        console.error('Error searching videos:', error);
-      }
-    } else {
-      console.error('Error searching videos:', error);
-    }
+    console.error('Error searching videos:', error);
   }
 };
 
