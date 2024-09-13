@@ -10,7 +10,7 @@ const VideoPlayer = React.memo(() => {
     <div className="video-player">
       {currentVideo && (
         <iframe
-          src={`https://www.youtube.com/embed/${currentVideo}`}
+          src={`https://www.youtube.com/embed/${currentVideo}?autoplay=1`}
           allow="autoplay; encrypted-media"
           allowFullScreen
         ></iframe>

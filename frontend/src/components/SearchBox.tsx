@@ -6,7 +6,7 @@ import SearchResults from './SearchResults';
 import './../styles/SearchBox.css';
 
 const SearchBox = React.memo(() => {
-  const { searchQuery, setSearchQuery, setSearchResults } =
+  const { searchQuery, setSearchQuery, setSearchResults, searchResults } =
     useContext<SearchBoxData>(GlobalContext);
 
   return (
@@ -17,7 +17,7 @@ const SearchBox = React.memo(() => {
         value={searchQuery}
         onChange={e => handleSearchChange(e, setSearchQuery, setSearchResults)}
       />
-      <SearchResults />
+      {searchResults.length > 0 && <SearchResults />}
     </div>
   );
 });

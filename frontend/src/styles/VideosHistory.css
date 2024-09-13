@@ -9,7 +9,9 @@
 .history-list {
   list-style-type: none;
   padding: 0;
-  background-color: #f0f0f0;
+  background-color: #c9c5b1;
+  border: 1px solid #b0ada0;
+  /* background-color: #787569; */
   height: 600px;
   overflow-y: auto;
   border-radius: 5px;
@@ -17,6 +19,7 @@
 
 .history-item {
   display: flex;
+  gap: 10px;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
@@ -35,4 +38,11 @@
   cursor: pointer;
   color: rgb(46, 46, 229);
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 900px) {
+  .history {
+    max-width: 90%;
+    margin: auto;
+  }
 }
