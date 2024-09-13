@@ -17,3 +17,9 @@ h1 {
 .search-and-results {
   flex: 3;
 }
+
+@media only screen and (max-width: 900px) {
+  .main-content {
+    flex-direction: column;
+  }
+}

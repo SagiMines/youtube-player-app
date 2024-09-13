@@ -26,6 +26,7 @@ body {
   margin: 0;
   place-items: center;
   background-color: rgb(251, 251, 246);
+
   min-height: 100vh;
 }
 

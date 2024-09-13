@@ -53,6 +53,7 @@ export interface SearchBoxData {
   searchQuery: string;
   setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
   setSearchResults: React.Dispatch<React.SetStateAction<YoutubeSearchResult[]>>;
+  searchResults: YoutubeSearchResult[];
 }
 
 export interface SearchResultsData {
