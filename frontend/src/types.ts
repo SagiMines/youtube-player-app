@@ -44,6 +44,9 @@ export interface Video {
 export interface VideosHistoryData {
   history: Video[];
   setHistory: React.Dispatch<React.SetStateAction<Video[]>>;
+  searchResults: YoutubeSearchResult[];
+  setSearchResults: React.Dispatch<React.SetStateAction<YoutubeSearchResult[]>>;
+  setCurrentVideo: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export interface SearchBoxData {

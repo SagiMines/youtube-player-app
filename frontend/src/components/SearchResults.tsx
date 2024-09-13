@@ -1,10 +1,10 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { GlobalContext } from './UserContext';
 import { handlePlay } from '../utils/functions';
 import { SearchResultsData } from '../types';
 import './../styles/SearchResults.css';
 
-const SearchResults = () => {
+const SearchResults = React.memo(() => {
   const { searchResults, setSearchResults, setCurrentVideo, setHistory } =
     useContext<SearchResultsData>(GlobalContext);
 
@@ -28,6 +28,6 @@ const SearchResults = () => {
       ))}
     </ul>
   );
-};
+});
 
 export default SearchResults;
