@@ -12,6 +12,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import videoRoutes from './routes/videoRoutes';
+import youtubeSearch from './routes/youtubeSearch';
 
 dotenv.config();
 const app = express();
@@ -37,6 +38,12 @@ mongoose
  * Routes are prefixed with `/api/videos` and handled by `videoRoutes`.
  */
 app.use('/api/videos', videoRoutes);
+
+/**
+ * Define API routes for YouTube videos search operations.
+ * Routes are prefixed with `/api/youtube-search` and handled by `youtubeSearch`.
+ */
+app.use('/api/youtube-search', youtubeSearch);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
