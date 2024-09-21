@@ -53,18 +53,23 @@ Before you begin, ensure you have met the following requirements:
 1. Backend Configuration:
 
    - In the `backend` directory, create a `.env` file with the following content:
+
      ```javascript
      MONGODB_URI = your_mongodb_connection_string;
+     YOUTUBE_API_KEY = your_first_youtube_api_key;
+     YOUTUBE_API_KEY2 = your_second_youtube_api_key;
+     YOUTUBE_API_KEY3 = your_third_youtube_api_key;
      ```
+
      Replace `your_mongodb_connection_string` with your actual MongoDB connection string.
+
+     Replace `your_first_youtube_api_key`, `your_second_youtube_api_key`, and `your_third_youtube_api_key` with your actual YouTube Data API keys.
 
 2. Frontend Configuration:
    - In the `frontend` directory, create a `.env` file with the following content:
      ```javascript
      VITE_API_BASE_URL=http://localhost:5000/api
-     VITE_YOUTUBE_API_KEY=your_youtube_api_key
      ```
-     Replace `your_youtube_api_key` with your actual YouTube Data API key.
 
 ## Running the Application
 
@@ -89,6 +94,7 @@ Before you begin, ensure you have met the following requirements:
 The backend provides the following API endpoints:
 
 - `GET /api/videos`: Get all watched videos history list
+- `GET /api/youtube-search`: Get relevant YouTube videos by "search" query
 - `POST /api/videos`: Add a new watched video to the history list
 - `DELETE /api/videos/:id`: Delete a video from the history list
 

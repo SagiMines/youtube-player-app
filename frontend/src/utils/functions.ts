@@ -4,8 +4,6 @@ import { ChangeEvent } from 'react';
 
 /** The "API_BASE_URL" environment variable */
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-/** The "YOUTUBE_API_KEY" environment variable */
-const YOUTUBE_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
 
 /**
  * @function fetchHistory
@@ -49,9 +47,9 @@ export const handleSearch = async (
 ): Promise<void> => {
   try {
     const response = await axios.get(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&type=video&key=${YOUTUBE_API_KEY}`
+      `${API_BASE_URL}/youtube-search?search=${searchQuery}`
     );
-    setSearchResults(response.data.items);
+    setSearchResults(response.data);
   } catch (error: any) {
     console.error('Error searching videos:', error);
   }
